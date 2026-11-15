@@ -1,0 +1,39 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+        </head>
+<nav class="menu">
+    <ul>
+        <li><a class="contex" href="${pageContext.request.contextPath}/index.jsp">HOME</a></li>
+        <li><a class="contex" href="${pageContext.request.contextPath}${URL_BASE}/CategoriaMedicamentoControlador?opcao=cancelar">CATEGORIA</a></li>
+        <li><a class="contex" href="${pageContext.request.contextPath}${URL_BASE}/CargoControlador?opcao=cancelar">CARGO</a></li>
+        <li><a class="contex" href="${pageContext.request.contextPath}${URL_BASE}/ConvenioControlador?opcao=cancelar">CONVENIO</a></li>
+        <li><a class="contex" href="${pageContext.request.contextPath}${URL_BASE}/FabricanteControlador?opcao=cancelar">FABRICANTE</a></li>
+        <li><a class="contex" href="${pageContext.request.contextPath}${URL_BASE}/FormaPagamentoControlador?opcao=cancelar">FORMA PAGAMENTO</a></li>
+        <li><a class="contex" href="${pageContext.request.contextPath}${URL_BASE}/FornecedorControlador?opcao=cancelar">FORNECEDOR</a></li>
+        <li><a class="contex" href="${pageContext.request.contextPath}${URL_BASE}/MedicamentoControlador?opcao=cancelar">MEDICAMENTO</a></li>
+        <li><a class="contex" href="${pageContext.request.contextPath}${URL_BASE}/ClienteControlador?opcao=cancelar">CLIENTE</a></li>
+        <li><a class="contex" href="${pageContext.request.contextPath}${URL_BASE}/FuncionarioControlador?opcao=cancelar">FUNCIONARIO</a></li>
+        <li><a class="contex" href="${pageContext.request.contextPath}${URL_BASE}/MedicamentoControlador?opcao=cancelar">MEDICAMENTO</a></li>
+        <li><a class="contex" href="${pageContext.request.contextPath}${URL_BASE}/CompraRemedioControlador?opcao=cancelar">COMPRA DE REMÉDIO</a></li>
+        <li><a class="contex" href="${pageContext.request.contextPath}${URL_BASE}/CidadeControlador?opcao=cancelar">CIDADE</a></li>
+
+        <li><a class="contex" href="${pageContext.request.contextPath}/relatorios.jsp">RELATÓRIOS</a></li>
+
+        <c:choose>
+            <c:when test="${empty sessionScope.usuarioLogado}">
+                <li>
+                    <a href="${pageContext.request.contextPath}/login.jsp">LOGIN</a>
+                </li>
+            </c:when>
+            <c:otherwise>
+                <li>
+                    <a href="${pageContext.request.contextPath}${URL_BASE}/LoginControlador">LOGOUT</a>
+                </li>
+            </c:otherwise>
+        </c:choose>
+    </ul>
+</nav>
